@@ -1,0 +1,38 @@
+# LISTA DE EXERCICIO - PYTHON INICIANTE
+# CRIADO POR: MARCOS ANDRÉ M. CELESTINO
+# YOUTUBE: TUXAUA CONCURSEIRO
+#12
+
+import datetime
+from sys import exit
+
+print('CALCULADORA DE IMC (INDICE DE MASSA CORPORAL)')
+
+nome = input('Por favor, informe seu nome: ')
+peso = float(input('Informe o seu peso: '))
+if peso < 0 and peso > 200:
+    print('Por favor, reinicie o programa e insira um valor válido!')
+    exit(1)
+altura = float(input('Informe sua altura: '))
+if altura < 0 and altura > 2.60:
+    print('Por favor, reinicie o programa e insira um valor válido!')
+    exit(1)
+
+imc = (peso/altura**2)
+
+print('\n')
+if imc < 18.5:
+    print('Sr/Sra.',nome,', seu IMC é: {:.2f}'.format(imc),'e você está em estado de MAGREZA!')
+elif imc >= 18.5 and imc <= 24.9:
+    print('Sr/Sra.', nome, ', seu IMC é: {:.2f}'.format(imc), 'e você está em estado NORMAL!')
+elif imc >= 25 and imc <= 29.9:
+    print('Sr/Sra.', nome, ', seu IMC é: {:.2f}'.format(imc), 'e você está em estado de SOBREPESO GRAU I!')
+elif imc >=30 and imc <= 39.9:
+    print('Sr/Sra.', nome, ', seu IMC é: {:.2f}'.format(imc), 'e você está em estado de OBESO GRAU II!')
+elif imc >=40 and imc <= 60:
+    print('Sr/Sra.', nome, ', seu IMC é: {:.2f}'.format(imc), 'e você está em estado de OBESO GRAVE GRAU III!')
+
+print('\n')
+print('Essa aplicação foi utilizada em: ',datetime.date.today())
+
+
